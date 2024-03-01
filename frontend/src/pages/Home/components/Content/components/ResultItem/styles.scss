@@ -1,0 +1,14 @@
+.result-item {
+
+  &__sections {
+
+    p {
+      margin-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+}

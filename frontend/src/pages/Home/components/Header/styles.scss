@@ -1,0 +1,17 @@
+@import '/src/variables/colors.scss';
+
+.header {
+  margin: 5em 2em;
+
+  &__text-title {
+    margin-bottom: 0;
+  }
+
+  &__text-sub-title {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1em;
+    color: $secondary-text;
+  }
+
+}

@@ -1,0 +1,1 @@
+export { SyntheticGeneration } from "./SyntheticGeneration";
