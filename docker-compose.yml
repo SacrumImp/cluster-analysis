@@ -4,11 +4,20 @@ services:
     build:
       context: ./frontend
     ports:
-      - "8181:8181"
+      - "8181:80"
+    environment:
+      APP_API_URL: http://backend:8000
     depends_on:
       - backend
+    networks:
+      - cluster_analysis_network
   backend:
     build:
       context: ./backend
     ports:
       - "8000:8000"
+    networks:
+      - cluster_analysis_network
+
+networks:
+  cluster_analysis_network:

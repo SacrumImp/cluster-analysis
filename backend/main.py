@@ -1,12 +1,24 @@
 from fastapi import FastAPI, BackgroundTasks, WebSocket
+from fastapi.middleware.cors import CORSMiddleware
 from models import ExperimentParams
+from data_producer import synthetic_generator
+from pydantic import BaseModel
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins during development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 @app.post("/performExperiment")
 async def calculate(request: ExperimentParams):
-  if request.dataType == 1:
-    return {"result": "success"}
+  if request.dataType == 0:
+    X, labels = synthetic_generator.generate_synthetic_data(N, V, K_star, n, alpha)
+    return { "X": X, "labels": labels }
 
   return {"result": "error"}
 

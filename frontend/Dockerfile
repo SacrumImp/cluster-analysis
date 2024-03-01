@@ -26,7 +26,7 @@ FROM nginx:stable-alpine
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /app/build /usr/share/nginx/html
 
-EXPOSE 8181
+EXPOSE 80
 
 # Define command to run the app using CMD which defines your runtime
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

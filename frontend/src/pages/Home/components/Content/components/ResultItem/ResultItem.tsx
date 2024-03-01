@@ -1,7 +1,6 @@
 import { observer } from "mobx-react";
 import {
   Accordion,
-  Text,
 } from "../../../../../../uikit";
 import { EAccordionItems } from "../../types";
 import { useResultItem } from "./useResultItem";
@@ -12,7 +11,6 @@ import "./styles.scss";
 
 export const ResultItem = observer(() => {
   const {
-    result,
     onClick,
     isLoading,
   } = useResultItem()
